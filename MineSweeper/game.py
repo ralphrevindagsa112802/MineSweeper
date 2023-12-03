@@ -60,7 +60,7 @@ class Application(tk.Frame):
 
 	def draw_game_frames(self):
 		self.header_frame = tk.Frame(self, width=345, height=85)
-		self.body_frame = tk.LabelFrame(self, width=345, height=400, bg='gray70',
+		self.body_frame = tk.LabelFrame(self, width=345, height=400, bg='#B6BBC4',
 						relief=tk.RIDGE)
 
 		self.header_frame.grid(row=0, column=0)
@@ -70,7 +70,7 @@ class Application(tk.Frame):
 		self.body_frame.grid_propagate(False)
 
 	def draw_header_frame(self):
-		self.score_frame = tk.LabelFrame(self.header_frame, width=130, height=85, bg='dodgerblue',
+		self.score_frame = tk.LabelFrame(self.header_frame, width=130, height=85, bg='#31304D',
 					relief=tk.FLAT)
 		self.score_frame.grid(row=0, column=0, rowspan=2)
 
@@ -80,7 +80,7 @@ class Application(tk.Frame):
 		self.highscore_frame = tk.Frame(self.score_frame, width=50, height=41, bg='#B6BBC4')
 		self.highscore_frame.grid(row=1, column=1, sticky='W')
 
-		self.timer_frame = tk.Frame(self.header_frame, width=215, height=35, bg='dodgerblue')
+		self.timer_frame = tk.Frame(self.header_frame, width=215, height=35, bg='#31304D')
 		self.timer_frame.grid(row=0, column=1)
 
 		self.others = tk.Frame(self.header_frame, width=215, height=50, bg='#B6BBC4')
