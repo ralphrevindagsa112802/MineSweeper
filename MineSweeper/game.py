@@ -27,7 +27,7 @@ class Application(tk.Frame):
 		self.draw_main_frame()
 
 	def draw_main_frame(self):
-		self.main_frame = tk.Frame(self, width=345, height=485)
+		self.main_frame = tk.Frame(self, width=345, height=485, bg='#F0ECE5')
 		self.main_frame.grid(row=0, column=0)
 		self.main_frame.grid_propagate(False)
 
@@ -35,13 +35,13 @@ class Application(tk.Frame):
 		self.logo.grid(row=0, column=0, columnspan=6, padx=22, pady=40)
 
 		self.level_frame = tk.LabelFrame(self.main_frame, text='Select Level ', 
-			width=250, height=60, fg='#161A30', font=('Consolas', 10))
+			width=250, height=60, bg='#F0ECE5', fg='#161A30', font=('Consolas', 10))
 		self.level_frame.grid(row=2, column=1, columnspan=4, pady=15)
 		self.level_frame.grid_propagate(False)
 
 		i = 0
 		for text, value in self.level_dict.items():
-			tk.Radiobutton(self.level_frame, text=text, value=value, 
+			tk.Radiobutton(self.level_frame, text=text, bg='#F0ECE5', value=value, 
 					variable=self.level).grid(row=0, column=i, pady=6, padx=7)
 			i += 1
 
