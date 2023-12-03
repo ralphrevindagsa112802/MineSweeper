@@ -8,7 +8,7 @@ import tkinter.ttk as ttk
 from tkinter import PhotoImage
 from tkinter import messagebox
 
-msg = 'Click a square, you get a number.\
+msg = 'Click a square, you will get a number.\
 That number is the number of how many mines are surrounding it.\
 If you find the mine, you can open "unopened" squares around it, opening more areas.'
 
@@ -35,7 +35,7 @@ class Application(tk.Frame):
 		self.logo.grid(row=0, column=0, columnspan=6, padx=22, pady=40)
 
 		self.level_frame = tk.LabelFrame(self.main_frame, text='Select Level ', 
-			width=250, height=60, fg='dodgerblue3', font=('verdana', 10))
+			width=250, height=60, fg='#161A30', font=('Consolas', 10))
 		self.level_frame.grid(row=2, column=1, columnspan=4, pady=15)
 		self.level_frame.grid_propagate(False)
 
@@ -74,16 +74,16 @@ class Application(tk.Frame):
 					relief=tk.FLAT)
 		self.score_frame.grid(row=0, column=0, rowspan=2)
 
-		self.current_score_frame = tk.Frame(self.score_frame, width=80, height=85, bg='white')
+		self.current_score_frame = tk.Frame(self.score_frame, width=80, height=85, bg='#B6BBC4')
 		self.current_score_frame.grid(row=0, column=0, rowspan=2)
 
-		self.highscore_frame = tk.Frame(self.score_frame, width=50, height=41, bg='white')
+		self.highscore_frame = tk.Frame(self.score_frame, width=50, height=41, bg='#B6BBC4')
 		self.highscore_frame.grid(row=1, column=1, sticky='W')
 
 		self.timer_frame = tk.Frame(self.header_frame, width=215, height=35, bg='dodgerblue')
 		self.timer_frame.grid(row=0, column=1)
 
-		self.others = tk.Frame(self.header_frame, width=215, height=50, bg='white')
+		self.others = tk.Frame(self.header_frame, width=215, height=50, bg='#B6BBC4')
 		self.others.grid(row=1, column=1)
 
 		self.score_frame.grid_propagate(False)
@@ -92,20 +92,20 @@ class Application(tk.Frame):
 		self.timer_frame.grid_propagate(False)
 		self.others.grid_propagate(False)
 
-		self.score_label = tk.Label(self.current_score_frame, font=('verdana', 42, 'bold'),
-						fg='dodgerblue3', text='0', width=2, bg='white')
+		self.score_label = tk.Label(self.current_score_frame, font=('Consolas', 42, 'bold'),
+						fg='#161A30', text='0', width=2, bg='#B6BBC4')
 		self.score_label.grid(row=0, column=0, pady=8)
 
-		self.highscore_label = tk.Label(self.highscore_frame, font=('verdana', 24), fg='#E8175D',
-						text=self.highscore, width=2, bg='white', anchor='w')
+		self.highscore_label = tk.Label(self.highscore_frame, font=('Consolas', 24), fg='#E8175D',
+						text=self.highscore, width=2, bg='#B6BBC4', anchor='w')
 		self.highscore_label.grid(row=0, column=0, pady=2)
 
-		self.timer_label = tk.Label(self.timer_frame, font=('verdana', 14), fg='black',
-						text='00:00:00', width=10, bg='white')
+		self.timer_label = tk.Label(self.timer_frame, font=('Consolas', 14), fg='black',
+						text='00:00:00', width=10, bg='#B6BBC4')
 		self.timer_label.grid(row=0, column=0, padx=55, pady=3)
 
-		self.others_label = tk.Label(self.others, font=('verdana', 12), fg='black',
-						width=10, bg='white')
+		self.others_label = tk.Label(self.others, font=('Consolas', 12), fg='black',
+						width=10, bg='#B6BBC4')
 		self.others_label.grid(row=0, column=0, pady=14, padx=110)
 
 	def start_playing(self):
@@ -133,7 +133,7 @@ class Application(tk.Frame):
 					pady = 0
 				btn = tk.Button(self.body_frame, text=f'', width=2, height=1,
 						relief=tk.RAISED, command = partial(self.check_cell, row, col),
-						highlightthickness=4, fg='blue', font=('verdana'),
+						highlightthickness=4, fg='blue', font=('Consolas'),
 						highlightcolor="#37d3ff", 
 						highlightbackground="#37d3ff", 
 						borderwidth=3)
@@ -297,7 +297,7 @@ class Application(tk.Frame):
 		self.top.protocol("WM_DELETE_WINDOW", self.master.destroy)
 
 		tk.Label(self.top, text=' You Lost', image=sad_face, fg='black',
-				font=('verdana', 10, 'bold'), compound=tk.LEFT,
+				font=('Consolas', 10, 'bold'), compound=tk.LEFT,
 				).grid(row=0, column=0, padx=50, pady=5,
 						columnspan=4)
 
