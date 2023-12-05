@@ -1,4 +1,5 @@
 import random
+import pygame
 from pprint import pprint
 from functools import partial
 from datetime import datetime
@@ -11,9 +12,9 @@ from tkinter import messagebox
 msg = 'Click a square, you will get a number.\
 That number is the number of how many mines are surrounding it.\
 If you find the mine, you can open "unopened" squares around it, opening more areas.'
-
 class Application(tk.Frame):
 	def __init__(self, master=None):
+		pygame.init()
 		super().__init__(master=master)
 		self.master = master
 		self.grid()
@@ -273,7 +274,12 @@ class Application(tk.Frame):
 
 	def game_lost(self):
 		self.gameRunning = False
+		self.play_game_lost_sound()
 		self.game_lost_window()
+		
+	def play_game_lost_sound(self):
+		pygame.mixer.music.load('sounds/boom.ogg')
+		pygame.mixer.music.play()
 
 	def restart_game(self):
 		self.top.destroy()
